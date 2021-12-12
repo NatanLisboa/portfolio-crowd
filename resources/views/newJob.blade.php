@@ -10,11 +10,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 mx-auto bg-white border-b border-gray-200">
-                    <form method="POST" action="/newJob" enctype="multipart/form-data" class="flex flex-col md:flex-row justify-between">
+                    <form method="POST" action="/newJob" enctype="multipart/form-data" class="flex flex-col w-full md:flex-row justify-center">
                         @csrf
-                        <div>
-                            <div class="flex flex-col  ">
-                                <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                        <div clas="w-full">
+                            <div class="flex flex-col">
+                                <label for="name">Nome</label>
                                 <input id="name" name="name" type="text" class="form-input">
                                 @error('name')
                                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -27,7 +27,7 @@
                                 @enderror
                             </div>
                             <div class="flex flex-col">
-                                <label for="description" class="block text-sm font-medium text-gray-700"  >Descrição</label>
+                                <label for="description" >Descrição</label>
                                 <textarea id="description" name="description" class="form-textarea "></textarea>
                                 @error('description')
                                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -39,10 +39,10 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div>
-                            <label for="job">Obra</label>
-                            <input id="job" name="job" type="file" class="form-input">
-                            @error('job')
+                            <div class="py-2">
+                                <label for="job">Obra</label>
+                                <input id="job" name="job" type="file" class="form-input">
+                                     @error('job')
                                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                                     <strong class="font-bold">Uma obra</strong>
                                     <span class="block sm:inline">é obrigatório.</span>
@@ -51,15 +51,17 @@
                                     </span>
                                 </div>
                             @enderror
-                            <div class="flex flex-col justify-end ">
-                            <div class="flex ">
-                                <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">
-                                    Salvar
-                                </button>
                             </div>
+                            <div class="flex flex-col justify-end ">
+                                 <div class="flex ">
+                                    <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">
+                                    Salvar
+                                    </button>
+                                </div>
+                            </div>
+                   
                         </div>
-                        </div>
-                        </div>
+
                     </form>
                 </div>
             </div>

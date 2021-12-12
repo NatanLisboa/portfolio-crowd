@@ -428,9 +428,6 @@ img {
   border-style: solid;
 }
 
-.logo{
-  width: 10vh
-}
 
 textarea {
   resize: vertical;
@@ -21783,6 +21780,7 @@ select {
 
 .py-2 {
   padding-top: 0.5rem;
+  margin-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
