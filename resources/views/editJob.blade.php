@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 mx-auto bg-white border-b border-gray-200">
-                    <form method="POST" action="/editJob/{{$job->id}}" enctype="multipart/form-data" class="flex flex-col md:flex-row justify-between">
+                    <form method="POST" action="/editJob/{{$job->id}}" enctype="multipart/form-data" class="flex flex-col md:flex-row justify-center">
                         @csrf
                         <div>
                             <div class="flex flex-col">
@@ -26,7 +26,7 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="flex flex-col">
+                            <div class="flex flex-col py-2">
                                 <label for="description">Descrição</label>
                                 <textarea id="description" name="description" class="form-textarea">{{$job->description}}</textarea>
                                 @error('description')
@@ -39,11 +39,10 @@
                                 </div>
                                 @enderror
                             </div>
-                        </div>
-                        <div>
-                            <img src="{{ "/media/job/$job->id" }}" alt="{{$job->description}}" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                        </div>
-                        <div>
+                            <div>
+                            <img src="{{ "/media/job/$job->id" }}" alt="{{$job->description}}" class="py-2 w-full h-full object-center object-cover group-hover:opacity-75">
+                            </div>
+                            <div class="py-2">
                             <label for="job">Trocar Obra</label>
                             <input id="job" name="job" type="file" class="form-input">
                             @error('job')
@@ -56,16 +55,18 @@
                                 </div>
                             @enderror
                         </div>
+                                     
                         <div class="flex flex-col justify-end ">
                             <div class="flex ">
-                                <a href="/deleteJob/{{$job->id}}" class="py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" >
+                                <a href="/deleteJob/{{$job->id}}" class="bg-red-500 group relative flex py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >
                                     Apagar
                                 </a>
-                                <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+                                <button class="group relative flex  py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">
                                     Salvar
                                 </button>
                             </div>
                         </div>
+                     </div>
                     </form>
                 </div>
             </div>
