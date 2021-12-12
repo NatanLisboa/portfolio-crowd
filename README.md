@@ -11,3 +11,19 @@ Crie seu portifólio e divulgue seu trabalho através do Crowd.
 - Bianca Kaori Hng – SP3022455  
 - Natan da Fonseca Lisboa – SP3024784  
 - Patrícia Santos Paschoal – SP3022218
+
+## Instruções
+
+- Instalar Composer
+- Editar as configurações do banco no arquivo .env
+- Instalar Breeze com os comandos: 
+
+php artisan breeze:install
+npm install
+npm run dev
+
+- Executar os comandos: 
+php artisan migrate
+php artisan serve 
+
+
