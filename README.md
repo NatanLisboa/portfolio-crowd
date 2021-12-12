@@ -6,24 +6,26 @@ Crie seu portifólio e divulgue seu trabalho através do Crowd.
 
 ## Integrantes
 
-
 - André Monteiro Gomes – SP3024059  	
 - Bianca Kaori Hng – SP3022455  
 - Natan da Fonseca Lisboa – SP3024784  
 - Patrícia Santos Paschoal – SP3022218
 
-## Instruções
+## Requisitos
 
-- Instalar Composer
-- Editar as configurações do banco no arquivo .env
-- Instalar Breeze com os comandos: 
+- Possuir PHP instalado
+- Possuir Composer instalado
 
-php artisan breeze:install
-npm install
-npm run dev
-
-- Executar os comandos: 
-php artisan migrate
-php artisan serve 
+## Instalar as dependências com o comando
+- php artisan breeze:install
+- npm install
 
 
+## Realizar o build das dependências Javascript:
+- npm run dev
+
+## Realizar as migrations:
+- php artisan migrate
+
+## Executar o projeto:
+- php artisan serve
