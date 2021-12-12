@@ -14,9 +14,7 @@
                 </div>
                 <div>
                     <div>
-
                         <div>
-
                             @foreach($jobs as $job)
                                 <a href="{{"/editJob/$job->id"}}" class="group">
                                     <div>

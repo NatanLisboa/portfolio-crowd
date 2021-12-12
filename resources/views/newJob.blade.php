@@ -13,8 +13,8 @@
                     <form method="POST" action="/newJob" enctype="multipart/form-data" class="flex flex-col md:flex-row justify-between">
                         @csrf
                         <div>
-                            <div class="flex flex-col">
-                                <label for="name">Nome</label>
+                            <div class="flex flex-col  ">
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
                                 <input id="name" name="name" type="text" class="form-input">
                                 @error('name')
                                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -27,8 +27,8 @@
                                 @enderror
                             </div>
                             <div class="flex flex-col">
-                                <label for="description">Descrição</label>
-                                <textarea id="description" name="description" class="form-textarea"></textarea>
+                                <label for="description" class="block text-sm font-medium text-gray-700"  >Descrição</label>
+                                <textarea id="description" name="description" class="form-textarea "></textarea>
                                 @error('description')
                                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                                     <strong class="font-bold">Descrição</strong>
@@ -39,8 +39,7 @@
                                 </div>
                                 @enderror
                             </div>
-                        </div>
-                        <div>
+                            <div>
                             <label for="job">Obra</label>
                             <input id="job" name="job" type="file" class="form-input">
                             @error('job')
@@ -52,13 +51,14 @@
                                     </span>
                                 </div>
                             @enderror
-                        </div>
-                        <div class="flex flex-col justify-end ">
+                            <div class="flex flex-col justify-end ">
                             <div class="flex ">
-                                <button class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+                                <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">
                                     Salvar
                                 </button>
                             </div>
+                        </div>
+                        </div>
                         </div>
                     </form>
                 </div>
