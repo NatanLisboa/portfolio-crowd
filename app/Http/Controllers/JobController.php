@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
-    public function createJob(NewJobRequest $request){
+    public function createJob(NewJobRequest $request)
+    {
         $validated = $request->validated();
 
         Job::create([
@@ -21,6 +22,7 @@ class JobController extends Controller
             'user_id' =>  Auth::id()
         ]);
 
+        return $this->listExistentJobs();
     }
 
     public function listExistentJobs()
@@ -32,8 +34,27 @@ class JobController extends Controller
         return view('dashboard',["jobs" => $jobs]);
     }
 
+    public function listExistentJobsByNickname(Request $request)
+    {
+        $nickname = $request->route('nickname');
+
+        $user_id = User::select('id')
+        -> where('nickname', $nickname)
+        -> get(0)
+        -> pluck('id');
+
+        $jobs = Job::where('user_id', $user_id)
+            ->get();
+
+        $userData = User::select('bio', 'email')
+        ->where('nickname', $nickname)
+        ->get();
+
+        return view('otherPeopleJobs', ["jobs" => $jobs, "nickname" => $nickname, "user" => $userData[0]]);
+    }
+
     public function getEditJob(Request $request,$id)
-    {   
+    {
         $job = Job::find($id);
 
         return view('editJob',["job" => $job]);

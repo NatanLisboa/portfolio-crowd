@@ -24,4 +24,6 @@ Route::get('/dashboard',[JobController::class,'listExistentJobs'])
 
 Route::get('/media/job/{jobId}',[MediaController::class,'show']);
 
+Route::get('/p/{nickname}', [JobController::class,'listExistentJobsByNickname']);
+
 require __DIR__.'/auth.php';
